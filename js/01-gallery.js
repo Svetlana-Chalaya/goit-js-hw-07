@@ -45,7 +45,7 @@ function offclick(event) {
 
 document.addEventListener("keydown", function (offclick) {
   if (offclick.key === "Escape") {
-    offclick.hideModal();
+    offclick();
   }
 });
 
