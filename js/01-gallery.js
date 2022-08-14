@@ -27,28 +27,32 @@ function containerGalleryCardsItems(galleryItems) {
 galleryContainer.addEventListener("click", onclick);
 function onclick(evt) {
   evt.preventDefault();
-  if (!evt.target.classList.contains(".gallery__item")) {
+  const isGalleryEl = evt.target.classList.contains("gallery__image");
+  if (!isGalleryEl) {
     return;
   }
-  console.log(evt.target.dataset.source);
-}
-console.log(galleryItems);
+  const variable = evt.target.dataset.source;
+  console.log(variable);
 
-galleryContainer.addEventListener("Escape", offclick);
-function offclick(event) {
-  console.log(event);
-}
-galleryContainer.addEventListener("click", offclick);
-
-function offclick(event) {
-  event.preventDefault();
   const instance = basicLightbox.create(`
-    <img src="gallery__item" width="800" height="600">
+    <img src="${variable}" width="800" height="600">
 `);
   instance.show();
-  console.log(event);
 }
 
+galleryContainer.addEventListener("Escape", offclickKeydown);
+
+function offclickKeydown() {
+  preventDefault();
+  if (offclickKeydown.key === "Escape") {
+    offclickKeydown();
+  }
+}
+
+// galleryContainer.addEventListener("Escape", offclick);
+// function offclick(event) {
+//   console.log(event);
+// }
 // const instance = basicLightbox.create(`
 //     <img src=""${preview}" width="800" height="600">
 // `);
@@ -111,15 +115,6 @@ function offclick(event) {
 // `);
 //   instance.show();
 //   console.log(event);
-// }
-
-// galleryContainer.addEventListener("Escape", offclickKeydown);
-
-// function offclickKeydown() {
-//   preventDefault();
-//   if (offclick.key === "Escape") {
-//     offclickKeydown();
-//   }
 // }
 
 // galleryContainer.addEventListener("click", onOffclick);

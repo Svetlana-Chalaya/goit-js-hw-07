@@ -22,3 +22,7 @@ function containerGalleryCardsItems(galleryItems) {
 }
 
 console.log(galleryItems);
+
+<a class="gallery__item" href="large-image.jpg">
+  <img class="gallery__image" src="small-image.jpg" alt="Image description" />
+</a>;
