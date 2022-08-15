@@ -9,18 +9,26 @@ function containerGalleryCardsItems(galleryItems) {
     .map(({ preview, original, description }) => {
       return ` <li class="gallery__item">
           <a class="gallery__item" href="${original}">
-  <img class="gallery__image" src="${preview}" alt="${description}", animationSpeed = 250 />
+  <img class="gallery__image" src="${preview}" alt="${description}" title = "how long takes the slide animation"/>
 </a>
 </li>`;
     })
     .join("");
 }
-
 console.log(galleryItems);
 
-const lightbox = new SimpleLightbox(".gallery", {});
+const lightbox = new SimpleLightbox(".gallery a", {});
 
 lightbox.show();
+
+// const titleEl = document.querySelector("title");
+// titleEl.insertAdjacentHTML(
+//   "beforeend",
+//   '<a href="">how long takes the slide animation</a>'
+// );
+
+// , animationSpeed = 250
+// , {}
 
 // , function () {
 // Do something…
