@@ -40,14 +40,14 @@ function onclick(evt) {
   instance.show();
 }
 
-galleryContainer.addEventListener("Escape", offclickKeydown);
+// galleryContainer.addEventListener("Escape", offclickKeydown);
 
-function offclickKeydown() {
-  preventDefault();
-  if (offclickKeydown.key === "Escape") {
-    offclickKeydown();
-  }
-}
+// function offclickKeydown() {
+//   preventDefault();
+//   if (offclickKeydown.key === "Escape") {
+//     offclickKeydown();
+//   }
+// }
 
 // galleryContainer.addEventListener("Escape", offclick);
 // function offclick(event) {
